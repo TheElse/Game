@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{AF461157-33B6-4B16-B9A4-2093F54DA9EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{AD56D8A8-C037-40BB-95DD-04A68991A39C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF461157-33B6-4B16-B9A4-2093F54DA9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF461157-33B6-4B16-B9A4-2093F54DA9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF461157-33B6-4B16-B9A4-2093F54DA9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF461157-33B6-4B16-B9A4-2093F54DA9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD56D8A8-C037-40BB-95DD-04A68991A39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD56D8A8-C037-40BB-95DD-04A68991A39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD56D8A8-C037-40BB-95DD-04A68991A39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD56D8A8-C037-40BB-95DD-04A68991A39C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

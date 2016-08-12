@@ -1,0 +1,6 @@
+F:\demoItem\game725\Game\DBUtility\bin\Release\DBUtility.dll
+F:\demoItem\game725\Game\DBUtility\bin\Release\DBUtility.pdb
+F:\demoItem\game725\Game\DBUtility\bin\Release\Dapper.dll
+F:\demoItem\game725\Game\DBUtility\bin\Release\DapperExtensions.dll
+F:\demoItem\game725\Game\DBUtility\obj\Release\DBUtility.dll
+F:\demoItem\game725\Game\DBUtility\obj\Release\DBUtility.pdb

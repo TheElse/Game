@@ -1,0 +1,1111 @@
+﻿@{
+    Layout = null;
+    
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/css.css" rel="stylesheet" />
+    <link href="~/css/jquery.autocomplete.css" rel="stylesheet" />
+    <script src="~/js/jquery1.9.0.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/sdmenu.js"></script>
+    <script src="~/js/laydate/laydate.js"></script>
+    <script src="~/js/autocomplete/jquery.autocomplete.js"></script>
+    <script src="~/js/json2.js"></script>
+    <script src="~/js/common.js"></script>
+    <script>
+        //赔率数组
+        var jsonPersont = [
+            { type: "0", LossPerCent: "1.0" },
+            { type: "1", LossPerCent: "7.0" },
+            { type: "2", LossPerCent: "0.95" },
+            { type: "3", LossPerCent: "10.0" },
+            { type: "4", LossPerCent: "10.0" }
+        ];
+    </script>
+    <style>
+        .btnGame {
+        background-color: red;
+        background-image: linear-gradient(to bottom, red, red);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }  
+        .btnGame1 {
+        background-color: blue;
+        background-image: linear-gradient(to bottom, blue, blue);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }       
+        .btnGame2 {
+        background-color: green;
+        background-image: linear-gradient(to bottom, green, green);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }  
+        .btnGame3 {
+        background-color: #49afcd;
+        background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }   
+        .btnGame4 {
+        background-color: #49afcd;
+        background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }                                                                                                                                                                                         
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><img src="img/logo.png" /></div>
+
+        <div class="header-right">
+            @*<i class="icon-question-sign icon-white"></i> <a href="#"></a>*@ 
+            <i class="icon-off icon-white"></i> <a id="modal-973558" href="#modal-container-973558" role="button" data-toggle="modal">退出系统</a> 
+            <i class="icon-user icon-white"></i> <a>当前用户：超级管理员</a> @*<i class="icon-envelope icon-white"></i>*@ <a href="#"></a>
+            <div id="modal-container-973558" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:300px; margin-left:-150px; top:30%">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">
+                        注销系统
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        您确定要注销退出系统吗？
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button> <a class="btn btn-primary" style="line-height:20px;" href="/home/index/">确定退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部 -->
+
+    <div id="middle">
+        <div class="left">
+
+            <script type="text/javascript">
+                var myMenu;
+                window.onload = function () {
+                    myMenu = new SDMenu("my_menu");
+                    myMenu.init();
+                };
+            </script>
+
+            <div id="my_menu" class="sdmenu">
+                <div>
+                    <span>业务处理</span>
+                    <a href="/Account/Recharge">账户充值</a>
+                    <a href="/Account/Withdrawal">账户提现</a>
+                    <a href="/Account/AccountDetail"> 账户查询 </a>
+                    <a href="/game/index">开始游戏</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="Switch"></div>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $(".Switch").click(function () {
+                $(".left").toggle();
+
+            });
+        });
+    </script>
+
+        <div class="right" id="mainFrame">
+
+            <div class="right_cont">
+                <ul class="breadcrumb">
+                    当前位置：
+                    <a href="#">首页</a>
+                    
+                    <span class="divider">/</span>
+                    游戏大厅
+                </ul>
+
+                <div class="title_right">
+                    @*<span class="pull-right margin-bottom-5">
+<a class="btn btn-info btn-small" id="modal-9735581" href="#modal-container-9735581" role="button" data-toggle="modal">
+<i class="icon-plus icon-white"></i> 添加线路城市
+</a>
+</span><strong>线路管理</strong>*@
+                </div>
+
+
+
+                @*<div id="modal-container-9735581" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:600px; margin-left:-300px; top:20%">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="myModalLabel">
+                            线路管理
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered">
+                            <tbody>
+
+                                <tr>
+                                    <td align="right">城市:</td>
+                                    <td align="left">
+                                        <input name="endTextBox" type="text" id="endTextBox" class="span1-1" />
+                                        [*]
+                                    </td>
+                                    <td align="right">缩写:</td>
+                                    <td align="left" colspan="3">
+                                        <input name="tbx_short2" type="text" id="tbx_short2" class="span1-1" />
+                                        [*]
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">联系人</td>
+                                    <td align="left"><input name="manTextBox" type="text" id="manTextBox" class="span1-1" /></td>
+                                    <td align="right">电话:</td>
+                                    <td align="left" colspan="3"><input name="phoneTextBox" type="text" id="phoneTextBox" class="span1-1" /></td>
+                                </tr>
+                                <tr>
+                                    <td align="right">郑货总部分成比例:</td>
+                                    <td align="left">
+                                        <input name="TextBox1" type="text" value="0" id="TextBox1" class="span1-1" />
+                                        %
+                                    </td>
+                                    <td align="right">郑货分公司分成比例:</td>
+                                    <td colspan="3" align="left">
+                                        <input name="TextBox2" type="text" value="0" id="TextBox2" class="span1-1" />
+                                        %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">返货总部分成比例:</td>
+                                    <td align="left">
+                                        <input name="TextBox3" type="text" value="0" id="TextBox3" class="span1-1" />
+                                        %
+                                    </td>
+                                    <td align="right">返货分公司分成比例:</td>
+                                    <td colspan="3" align="left">
+                                        <input name="TextBox4" type="text" value="0" id="TextBox4" class="span1-1" />
+                                        %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" align="center">网内中转货分成比例</td>
+                                </tr>
+                                <tr>
+                                    <td align="right">（中转）发货方分成比例:</td>
+                                    <td align="left">
+                                        <input name="TextBox5" type="text" value="0" id="TextBox5" class="span1-1" />
+                                        %
+                                    </td>
+                                    <td align="right">（中转）收货方分成比例:</td>
+                                    <td colspan="3" align="left">
+                                        <input name="TextBox6" type="text" value="0" id="TextBox6" class="span1-1" />
+                                        %
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" style="width:80px">保存</button>
+                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" style="width:80px">取消</button>
+                    </div>
+                </div>*@
+                <input type="hidden" value="@(ViewBag.Times)" id="hidTimes" />
+                <table class="table table-bordered table-striped table-hover">
+                    <tbody>
+                    <tr align="center">
+                        <td colspan="9">第 <strong>@(ViewBag.Times)</strong> 局</td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="8">当前时间：@(DateTime.Now)</td>
+                        <td class="text-center"><input type="button" id="btnAddGameUser" value="添加新的用户" class="btn btn-info"/></td>
+                    </tr>
+
+                    <tr align="center">
+                        <td><strong>用户名</strong></td>
+                        <td><strong>本次下注统计</strong></td>
+                        <td><strong>本次输赢</strong></td>
+                        <td><strong>账户当前积分</strong></td>
+                        <td><strong>月充值总额</strong></td>
+                        <td><strong>月统计输赢</strong></td>
+                        <td><strong>总充值额</strong></td>
+                        <td><strong></strong></td>
+                        <td><strong></strong></td>
+                    </tr>
+                    </tbody>
+                    <tfoot id="tbFoot">
+                    <tr align="center">
+                        <td align="center"><input type="text" name="itemUser" id="" onblur="fnGetUserIdByUserName(this)" class=" span1 text-center" style="width: 100px;" value="" /></td>
+                        <td align="center"><select class=" span1" name="select">
+                                <option style="background-color: blue" value="0">闲</option>
+                                <option style="background-color: green" value="1">和</option>
+                                <option style="background-color: red" value="2">庄</option>
+                                <option style="background-color: red" value="3">庄对</option>
+                                <option style="background-color: blue" value="4">闲对</option>
+                            </select>
+                            <input type="text" name='money' class=" span1 text-center" style="width: 100px;" value=""/>
+
+                        </td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td><span style="display: none" data-val="userid"></span></td>
+                        <td></td>
+                    </tr>
+                        @*<tr align="center">
+                            <td align="center"><input type="text" name="itemUser" id="" class=" span1 text-center" style="width: 100px;" value="" /></td>
+                            <td align="center">
+                                <select id="select" class=" span1" name="select">
+                                    <option value="0">闲</option>
+                                    <option value="1">和</option>
+                                    <option value="2">庄</option>
+                                    <option value="3">庄对</option>
+                                    <option value="4">闲对</option>
+                                </select>
+                                <input type="text" name='money' class=" span1 text-center" style="width: 100px;" value="" />
+                            </td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td align="center"></td>
+                            <td><span style="display: none" data-val="userid"></span></td>
+                            <td></td>
+                        </tr>*@
+                    </tfoot>
+                </table>
+                <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                        <td colspan="5">总计:<span id="spanTotal">0</span></td>
+                    </tr>
+                </table>
+                <table id="btnTable_payGame" class="table table-bordered table-striped table-hover">
+                    <tr><td colspan="5">本次赢家</td></tr>
+                    <tr>
+                        @*<td class="text-center"><input onclick=" payGame(0); " type="button" value="闲" class="btnGame1" style="width: 80px; background-color: blue"/></td>
+                        <td class="text-center"><input onclick=" payGame(1); " type="button" value="和" class="btnGame2" style="width: 80px;"/></td>
+                        <td class="text-center"><input onclick=" payGame(2); " type="button" value="庄" class="btnGame" style="width: 80px;"/></td>
+                        <td class="text-center"><input onclick=" payGame(3); " type="button" value="庄对" class="btnGame" style="width: 80px;"/></td>
+                        <td class="text-center"><input onclick=" payGame(4); " type="button" value="闲对" class="btnGame1" style="width: 80px;"/></td>*@
+                        <td class="text-center">
+                            <input name="single" value="0" type="radio" /><span class="btnGame1">闲</span>  
+                            <input name="single" value="1" type="radio" /><span class="btnGame2">和</span>  
+                            <input name="single" value="2" type="radio" /><span class="btnGame">庄</span> 
+                        </td>
+               
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input name="double4" onclick="fnRadioSelect(this);" value="4" type="radio"/><span class="btnGame">闲对</span>
+                            <input name="double3" onclick="fnRadioSelect(this);" value="3" type="radio"/><span class="btnGame1">庄对</span>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <input type="button" id="btnStartGame" onclick="fnStartGame();" value="提 交"/>
+                            @*<input type="button" id="btnReort" value="导出报表"/>*@
+                            <a id="btnReort" href="javascript:void(0);">导出报表</a>
+                        </td>
+                    </tr>
+                </table>
+                <table class="margin-bottom-20 table  no-border">
+                    <tr>
+                        <td class="text-center"><input type="button" onclick=" fnOnLoadNextTime(); " value="开启新的一轮" class="btn btn-info" style="width: 150px;"/></td>
+                        <input type="hidden" id="hidObj"/>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+<div id="footer"></div>
+    <div style="width: 400px; margin-left: -300px; top: 20%; display: none;" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" class="modal hide fade" id="modal-container-9735581">
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h3 id="myModalLabel">
+                余额充值
+            </h3>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td align="right">金额:</td>
+                        <td align="left">
+                            <input type="text" class="span1-1" id="inputAddAmout" name="inputAddAmout">
+                            <input type="hidden" id="hidGuid"/>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button style="width:80px" aria-hidden="true" data-dismiss="modal" onclick="fnUserRecharge(this);" class="btn btn-info">保存</button>
+            <button style="width:80px" aria-hidden="true" data-dismiss="modal" class="btn btn-info">取消</button>
+        </div>
+    </div>
+<script id="rowTample" type="text/x-kendo-template">
+        <tr align="center">
+            <td align="center"><input type="text" name="itemUser" onblur="fnGetUserIdByUserName(this)" id="" class=" span1 text-center" style="width: 100px;" value="" /></td>
+            <td align="center">
+                <select id="select" class=" span1" name="select">
+                    <option style="background-color: blue" value="0">闲</option>
+                    <option style="background-color: green" value="1">和</option>
+                    <option style="background-color: red" value="2">庄</option>
+                    <option style="background-color: red" value="3">庄对</option>
+                    <option style="background-color: blue" value="4">闲对</option>
+                </select>
+                <input type="text"  name='money' class=" span1 text-center" style="width: 100px;" value="" />
+            </td>
+            <td align="center"></td>
+            <td align="center"></td>
+            <td align="center"></td>
+            <td align="center"></td>
+            <td align="center"></td>
+            <td><span style="display: none" data-val="userid"></span></td>
+            <td >
+            @*<a id="modal-9735581" onclick="fn_Recharge(this);"  class="btn btn-info btn-small" data-toggle="modal" role="button" href="#modal-container-9735581">
+    <i class="icon-plus icon-white"></i> 充值</a>*@
+            <input type="button" name="btnDel" value="删除" class="btn btn-info" /></td>
+            <td></td>
+        </tr>
+    </script>
+<script>
+    !function() {
+        laydate.skin('molv');
+        laydate({ elem: '#Calendar' });
+        laydate.skin('molv');
+        laydate({ elem: '#Calendar2' });
+    }();
+
+
+    function fnRadioSelect(that) {
+        /*闲对和庄对 选择事件--s*/
+        var attrData = $(that).attr("data-val");
+        if (attrData == '' || attrData == null || !attrData) {
+            $(that).attr("data-val", "1");
+            return;
+        }
+
+        if (attrData == "1") {
+            $(that).attr("checked",false);
+            $(that).attr("data-val", "0");
+        } else {
+            $(that).attr("checked",true);
+            $(that).attr("data-val", "1");
+        }
+   
+      }
+
+  
+
+    //function fn_Recharge(that) {
+    //    //alert($(that).parent().parent().html());
+    //    $("#hidObj").val(that);
+    //}
+
+
+    function fnUserRecharge(that) {
+        //用户充值
+       // alert($("#hidObj").val());
+        return;
+        var userid = $(that).parent().parent().find("span[data-val='userid']").html();
+        var amountMoney = $("#inputAddAmout").val();
+        if (userid == "") {
+            return;
+        }
+        if (amountMoney == "" || parseFloat(amountMoney) <= 0) {
+            alert("请输入充值金额!");
+            return;
+        }
+
+        $.ajax({
+            type: 'post',
+            url: '/Account/Recharge',
+            dataType: 'json',
+            data: {
+                userName: '',
+                amountMoney: amountMoney,
+                userId: userid
+            },
+            success: function(data) {
+                if (data.sucess == 1) {
+                    $("#userName").val("");
+                    $("#amountMoney").val("");
+                    alert("成功!");
+                }
+            },
+            error: function(textThrown, errorText) {
+                alert("ajax方法Error！" + errorText);
+            }
+        });
+    }
+
+</script>
+<script type="text/javascript">
+    var user = [
+        { key: "admin", id: "1", gid: "1", club: "", root: "0", keyname: "admin-管理員", name: "管理員", phone: "0755-12345678", group: "" },
+        { key: "UserAdmin", id: "2", gid: "1", club: "", root: "0", keyname: "admin-管理員", name: "管理員", phone: "0755-12345678", group: "" }
+    ];
+
+    $(function() {
+        fnInputEven(); //注册事件
+        $("#btnAddGameUser").click(function() {
+            /*添加新行*/
+            var rowitem = $("#rowTample").html();
+            $("#tbFoot").append(rowitem);
+            fnInputEven(); //注册事件
+            moneyEven();
+            fnDelete();
+        });
+
+        moneyEven();
+    });
+
+    function moneyEven() {
+        $("input[name='money']").blur(function () {
+
+            var that = this;
+            var thisVal = $(that).val();
+
+            if (thisVal != '') {
+                var userid = $(that).parent().parent().find("span[data-val='userid']").html();
+                if (userid != '' && userid > 0) {
+                    $.ajax({
+                        type: 'post',
+                        url: '/Game/UserTotalRecord',
+                        dataType: 'json',
+                        data: {
+                            id: userid
+                        },
+                        success: function (data) {
+                            var d = eval(data.totalData);
+                            if (parseFloat(thisVal) > parseFloat(d.Point)) {
+                                alert("账户的积分不足，请先充值!");
+                                $(that).val(0);
+                            }
+                            //输入后统计
+                            fnGameTotal();
+                            //$($(that).parent().parent().find("td")[3]).html(d.Point); //账户当前积分
+                            //$($(that).parent().parent().find("td")[4]).html(d.MonthAmount); //月充值总额
+                            //$($(that).parent().parent().find("td")[5]).html(d.MonthSFTime); //月统计输赢
+                            //$($(that).parent().parent().find("td")[6]).html(d.TotalMoney); //总充值额
+                            //$(that).parent().parent().find("span[data-val='userid']").html(data.UserId); //用户ID
+                            //$($(that).parent().parent().find("td")[2]).attr("id", "win" + row.UserId); //设置一个ID  输赢
+                            //$($(that).parent().parent().find("td")[3]).attr("id", "point" + row.UserId); //设置一个ID 账户当前积分
+                        },
+                        error: function (textThrown, errorText) {
+
+                        }
+                    });
+                }
+            }
+
+
+        });
+    }
+
+    function fnDelete() {
+        //删除行
+        $("input[name='btnDel']").click(function() {
+            $(this).parent().parent().remove();
+        });
+    }
+
+    function fnInputEven() {
+        /*文本框输入事件，带出值*/
+        //$("input[name='itemUser']").each(function() {
+        //    $(this).keyup(function() {
+        //        var userName = $.trim($(this).val());//用户输入的用户名
+        //        var that =this;
+        //        if (userName != "") {
+        //            $($(that).parent().parent().find("td")[3]).html(0);
+        //            $($(that).parent().parent().find("td")[4]).html(0);
+        //            $($(that).parent().parent().find("td")[5]).html(0);
+        //            $($(that).parent().parent().find("td")[6]).html(0);
+        //            $.ajax({
+        //                type: 'post',
+        //                url: '/Game/UserTotalRecord',
+        //                dataType: 'json',
+        //                data: {
+        //                    userName: userName
+        //                },
+        //                success: function (data) {
+        //                    var d = eval(data.totalData);
+        //                    $($(that).parent().parent().find("td")[3]).html(d.Point);//账户当前积分
+        //                    $($(that).parent().parent().find("td")[4]).html(d.MonthAmount);//月充值总额
+        //                    $($(that).parent().parent().find("td")[5]).html(d.MonthSFTime);//月统计输赢
+        //                    $($(that).parent().parent().find("td")[6]).html(d.TotalMoney);//总充值额
+        //                    $(that).parent().parent().find("span").html(data.UserId);//用户ID
+        //                    $($(that).parent().parent().find("td")[2]).attr("id", "win" + data.UserId);//设置一个ID  输赢
+        //                    $($(that).parent().parent().find("td")[3]).attr("id", "point" + data.UserId);//设置一个ID 账户当前积分
+        //                },
+        //                error: function (textThrown, errorText) {
+
+        //                }
+        //            });
+        //        }
+
+        //    });
+        //});
+        var url = "/Account/GetUserInfoByUserName/";
+        $("input[name='itemUser']").autocomplete(url, {
+            minChars: 1, //最少输入字条
+            max: 15,
+            autoFill: false, //是否选多个,用","分开
+            mustMatch: false, //是否全匹配, 如数据中没有此数据,将无法输入
+            matchContains: true, //是否全文搜索,否则只是前面作为标准
+            scrollHeight: 220,
+            width: 100,
+            multiple: false,
+            //需要把data转换成json数据格式
+            parse: function(data) {
+                return $.map(eval(data), function(row) {
+                    return {
+                        data: row,
+                        value: row.UserId,
+                        result: row.UserName
+                    }
+                });
+            },
+            formatItem: function(row, i, max) { //显示格式
+                //return "<span style='width:80px'>" + row.UserId + "</span><span style='width:80px'>" + row.UserName + "</span>";
+                return "<span style='width:80px'>" + row.UserName + "</span>";
+            },
+            formatMatch: function(row, i, max) { //以什么数据作为搜索关键词,可包括中文,
+                return row.UserName;
+
+            },
+            formatResult: function(row) { //返回结果
+
+                return row.UserId;
+
+            }
+        }).result(function(event, row, formatted) {
+            var that = this;
+            $.ajax({
+                type: 'post',
+                url: '/Game/UserTotalRecord',
+                dataType: 'json',
+                data: {
+                    id: row.UserId
+                },
+                success: function(data) {
+                    var d = eval(data.totalData);
+                    $($(that).parent().parent().find("td")[3]).html(d.Point); //账户当前积分
+                    $($(that).parent().parent().find("td")[4]).html(d.MonthAmount); //月充值总额
+                    $($(that).parent().parent().find("td")[5]).html(d.MonthSFTime); //月统计输赢
+                    $($(that).parent().parent().find("td")[6]).html(d.TotalMoney); //总充值额
+                    $(that).parent().parent().find("span[data-val='userid']").html(data.UserId); //用户ID
+                    var guid = new GUID();//生成一个guid
+                    //alert(guid.newGUID());
+                    $($(that).parent().parent().find("td")[2]).attr("dataguid", "win" + guid.newGUID()); //设置一个ID  输赢
+                    //$($(that).parent().parent().find("td")[3]).attr("id", "point" + row.UserId); //设置一个ID 账户当前积分
+                },
+                error: function(textThrown, errorText) {
+
+                }
+            });
+
+        });
+    }
+
+    function fnStartGame() {
+
+        var singleItem = $("input[name='single']:checked").val();
+        var doubleItem3 = $("input[name='double3']:checked").val();
+        var doubleItem4 = $("input[name='double4']:checked").val();
+        //if (singleItem.length<=0 && doubleItem.length<=0) {
+        //    alert('请选择游戏输结果!');
+        //    return;
+        //}
+
+        if (singleItem == "" && doubleItem == "" && doubleItem4=="") {
+            alert('请选择游戏输结果!');
+            return;
+        }
+
+        /*获取游戏结果--s*/
+        var payGameArrary = new Array();
+        if (singleItem != "" && singleItem) {
+            payGameArrary.push(singleItem);
+        }
+        if (doubleItem3 != "" && doubleItem3) {
+            payGameArrary.push(doubleItem3);
+        }
+
+        if (doubleItem4 != "" && doubleItem4) {
+            payGameArrary.push(doubleItem4);
+        }
+
+
+        // alert(payGameArrary.join(','));
+        /*获取游戏结果--e*/
+
+        /*
+       0--闲
+       1--和
+       2--庄
+       3--庄对
+       4--闲对
+       */
+        fnGameTotal();
+        var times = $("#hidTimes").val();
+        var typeText = "";
+        var gameParamentItem = new Array();
+        var userIdArrary = new Array();//用户ID数组
+        var userIds = new Array();//用户ID
+        var userAmountItems = new Array();
+
+
+        $("#tbFoot tr").each(function () {
+            var userId = $(this).find("span[data-val='userid']").html();
+            var selectType = $(this).find("select").val();
+            var bettingAmount = $(this).find("input[name='money']").val();
+            var guid = $($(this).find("td")[2]).attr("dataguid");
+            gameParamentItem.push(userId + "|" + selectType + "|" + bettingAmount + "|" + guid + ","); //用户ID/购买类型/购买金额
+            userIdArrary.push(userId + ",");
+
+            if (userIds.indexOf(userId) == -1) {
+                userIds.push(userId);
+            }
+            userAmountItems.push(userId + "|" + bettingAmount + ",");//用户的ID和投注金额
+        });
+
+        /*检测用户投注的金额是否超过账户上的余额--s*/
+        var isResult = true;
+        $.ajax({
+            type: 'post',
+            url: '/Account/GetUserAccountByUserIds',
+            dataType: 'json',
+            async: false,
+            data: {
+                userIds: userIds.join(','),
+                bettingAmountItems: userAmountItems.join('')
+            },
+            success: function (data) {
+                if (parseInt(data.sucess) <= 0) {
+                    alert(data.msg);
+                    isResult = false;
+                }
+            }
+        });
+        /*检测用户投注的金额是否超过账户上的余额--e*/
+
+        if (!isResult) {
+            return;
+        }
+
+        //return;
+        // alert(gameParamentItem.join(''));
+        //return;
+        //switch (type) {
+        //    case 0:
+        //        typeText = "闲";
+        //        break;
+        //    case 1:
+        //        typeText = "和";
+        //        break;
+        //    case 2:
+        //        typeText = "庄";
+        //        break;
+        //    case 3:
+        //        typeText = "庄对";
+        //        break;
+        //    case 4:
+        //        typeText = "闲对";
+        //        break;
+        //}
+        if (confirm("确定提交吗?")) {
+            $.ajax({
+                type: 'post',
+                url: '/Game/GamePayTotal',
+                dataType: 'json',
+                data: {
+                    typeWin: payGameArrary.join(','),
+                    times: times,
+                    gameParamentItem: gameParamentItem.join('')
+                },
+                success: function (data) {
+                    fnGameTotal();
+                    settingBtnEnblade();
+                    $("input[name='btnDel']").attr("disabled", "disabled");//移除按钮设置为禁用
+                    $("#btnAddGameUser").attr("disabled", "disabled");//新添加的按钮设置为禁用
+                    $("#btnReort").attr("href", "/game/ImportGameResult?times=@(ViewBag.Times)");
+
+
+                    /*统计用户的输赢情况--s*/
+                    var itemArrary = gameParamentItem.join('').split(',');
+                    if (itemArrary.length > 0) {
+                        for (var i = 0; i < itemArrary.length; i++) {
+                            if (itemArrary[i] != "" && itemArrary[i]) {
+                                var tmpItemArrary = itemArrary[i].split('|');
+
+                                var userSelectType = parseInt(tmpItemArrary[1]);//用户选择的类型
+
+                                /*游戏的输赢类型*/
+                                /*如果开奖结果包含和，且用户买的是闲或庄，则不作统计处理*/
+                                if( $.inArray("1",payGameArrary)>=0 && (userSelectType=="0"||userSelectType=="2") ){
+                                    $($("#tbFoot tr td[dataguid='" + tmpItemArrary[3] + "']")).html(0);
+                                } else {
+                                    var isHasRecord = false;
+                                    $(payGameArrary).each(function(item, key) {
+
+                                        var lossPerCent = 1;
+                                        if (parseInt(userSelectType) == parseInt( key)) {
+                                            $(jsonPersont).each(function (k, j) {//赔率
+                                                if (parseInt(j.type) == parseInt(userSelectType)) {
+                                                    lossPerCent = parseFloat(j.LossPerCent);
+                                                    var wintotalPrice = parseFloat(tmpItemArrary[2] * parseFloat(lossPerCent));
+                                                    $($("#tbFoot tr td[dataguid='" + tmpItemArrary[3] + "']")).html(wintotalPrice);
+                                                    isHasRecord = true;
+                                                }
+                                            });
+                                        }
+
+                                    });
+
+                                    if (!isHasRecord) {
+                                        $($("#tbFoot tr td[dataguid='" + tmpItemArrary[3] + "']")).html("-" + tmpItemArrary[2]);
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                    /*统计用户的输赢情况--e*/
+                    // userIdArrary
+                    $.ajax({
+                        type: 'post',
+                        url: '/Account/GetUserPayGameAccountInfoDetail',
+                        dataType: 'json',
+                        async: false,
+                        data: {
+                            userIds: userIdArrary.join('')
+                        },
+                        success: function (datas) {
+                            if (datas.sucess == 1) {
+                                $("input[name='money']").attr("disabled", "disabled");
+                                var d = eval(datas.dateItem);
+
+                                $(d).each(function (h, o) {
+                                    $("span[data-val='userid']").each(function () {
+                                        var htmlVal = $(this).html();
+                                        if (parseInt(htmlVal) == parseInt(o.UserId)) {
+                                            // $(this).parent().parent()
+                                            $($(this).parent().parent().find("td")[3]).html(o.Point); //账户当前积分
+                                            $($(this).parent().parent().find("td")[4]).html(o.MonthAmount); //月充值总额
+                                            $($(this).parent().parent().find("td")[5]).html(o.MonthSFTime); //月统计输赢
+                                            $($(this).parent().parent().find("td")[6]).html(o.TotalMoney); //总充值额
+                                        }
+                                    });
+
+                                    //alert(o.TotalMoney);
+                                });
+
+                            }
+                        }
+                    });
+                },
+                error: function (textThrown, errorText) {
+
+                }
+            });
+        }
+
+    }
+
+
+    function payGame(type) {
+        //  此方法暂时不用
+        /*
+        0--闲
+        1--和
+        2--庄
+        3--庄对
+        4--闲对
+        */
+        fnGameTotal();
+        var times = $("#hidTimes").val();
+        var typeText = "";
+        var gameParamentItem = new Array();
+        var userIdArrary = new Array();//用户ID数组
+        var userIds = new Array();//用户ID
+        var userAmountItems = new Array();
+
+
+        $("#tbFoot tr").each(function() {
+            var userId = $(this).find("span[data-val='userid']").html();
+            var selectType = $(this).find("select").val();
+            var bettingAmount = $(this).find("input[name='money']").val();
+            var guid = $($(this).find("td")[2]).attr("dataguid");
+            gameParamentItem.push(userId + "|" + selectType + "|" + bettingAmount +"|"+ guid+","); //用户ID/购买类型/购买金额
+            userIdArrary.push(userId + ",");
+
+            if (userIds.indexOf(userId) == -1) {
+                userIds.push(userId);
+            }
+            userAmountItems.push(userId + "|" + bettingAmount + ",");//用户的ID和投注金额
+        });
+
+        /*检测用户投注的金额是否超过账户上的余额--s*/
+        var isResult = true;
+        $.ajax({
+            type: 'post',
+            url: '/Account/GetUserAccountByUserIds',
+            dataType: 'json',
+            async: false,
+            data: {
+                userIds: userIds.join(','),
+                bettingAmountItems:userAmountItems.join('')
+            },
+            success: function(data) {
+                if (parseInt(data.sucess) <= 0) {
+                    alert(data.msg);
+                    isResult = false;
+                }
+            }
+        });
+        /*检测用户投注的金额是否超过账户上的余额--e*/
+
+        if (!isResult) {
+            return;
+        }
+
+        //return;
+        // alert(gameParamentItem.join(''));
+        //return;
+        switch (type) {
+        case 0:
+            typeText = "闲";
+            break;
+        case 1:
+            typeText = "和";
+            break;
+        case 2:
+            typeText = "庄";
+            break;
+        case 3:
+            typeText = "庄对";
+            break;
+        case 4:
+            typeText = "闲对";
+            break;
+        }
+        if (confirm("确定是" + typeText + "赢吗?")) {
+            $.ajax({
+                type: 'post',
+                url: '/Game/GamePay',
+                dataType: 'json',
+                data: {
+                    typeWin: type,
+                    times: times,
+                    gameParamentItem: gameParamentItem.join('')
+                },
+                success: function(data) {
+                    fnGameTotal();
+                    settingBtnEnblade();
+                    $("input[name='btnDel']").attr("disabled", "disabled");//移除按钮设置为禁用
+                    $("#btnAddGameUser").attr("disabled", "disabled");//新添加的按钮设置为禁用
+
+
+
+                    /*统计用户的输赢情况--s*/
+                    var itemArrary = gameParamentItem.join('').split(',');
+                    if (itemArrary.length > 0) {
+                        for (var i = 0; i < itemArrary.length; i++) {
+                            if (itemArrary[i] != "" && itemArrary[i]) {
+                                var tmpItemArrary = itemArrary[i].split('|');
+                                if (parseInt(tmpItemArrary[1]) == parseInt(type)) {
+                                    var lossPerCent = 1;
+                                    $(jsonPersont).each(function (k, j) {//赔率
+                                        if (parseInt(j.type) == parseInt(type)) {
+                                            lossPerCent = parseFloat(j.LossPerCent);
+                                        }
+                                    });
+                                    var wintotalPrice = parseFloat(tmpItemArrary[2] * parseFloat(lossPerCent));
+                                    //$("#win" + tmpItemArrary[0]).html(wintotalPrice); //赢为正分
+                                    $($("#tbFoot tr td[dataguid='" + tmpItemArrary[3] + "']")).html(wintotalPrice);
+                                } else {
+                                    // $("#win" + tmpItemArrary[0]).html("-" + tmpItemArrary[2]); //输为负分
+
+                                   // var tritem = $("#tbFoot tr td[dataguid='win" + tmpItemArrary[3] + "']");
+                                    //alert(tmpItemArrary[3]);
+                                   // $($("#tbFoot tr td")[2]["dataguid='"+tmpItemArrary[3]+"'"]).html("-" + tmpItemArrary[2]);
+
+                                    //$($("#tbFoot tr td")[2]).attr("dataguid", tmpItemArrary[3]).html("-" + tmpItemArrary[2]);
+                                    // $("#tbFoot tr td[dataguid='win" + tmpItemArrary[3] + "']").html("-" + tmpItemArrary[2]);
+                                    $($("#tbFoot tr td[dataguid='" + tmpItemArrary[3] + "']")).html("-" + tmpItemArrary[2]);
+
+                                }
+                            }
+                        }
+                    }
+                    /*统计用户的输赢情况--e*/
+                    // userIdArrary
+                    $.ajax({
+                        type: 'post',
+                        url: '/Account/GetUserPayGameAccountInfoDetail',
+                        dataType: 'json',
+                        async: false,
+                        data: {userIds: userIdArrary.join('')
+                        },
+                        success: function(datas) {
+                            if (datas.sucess == 1) {
+                                $("input[name='money']").attr("disabled", "disabled");
+                                var d = eval(datas.dateItem);
+
+                                $(d).each(function(h, o) {
+                                    $("span[data-val='userid']").each(function() {
+                                        var htmlVal = $(this).html();
+                                        if (parseInt(htmlVal) == parseInt(o.UserId)) {
+                                            // $(this).parent().parent()
+                                            $($(this).parent().parent().find("td")[3]).html(o.Point); //账户当前积分
+                                            $($(this).parent().parent().find("td")[4]).html(o.MonthAmount); //月充值总额
+                                            $($(this).parent().parent().find("td")[5]).html(o.MonthSFTime); //月统计输赢
+                                            $($(this).parent().parent().find("td")[6]).html(o.TotalMoney); //总充值额
+                                        }
+                                    });
+
+                                    //alert(o.TotalMoney);
+                                });
+
+                            }
+                        }
+                    });
+                },
+                error: function(textThrown, errorText) {
+
+                }
+            });
+        }
+
+    }
+
+    function fnGameTotal() {
+        /*统计投资*/
+        var totalMoney = 0;
+        $("#tbFoot tr input[name='money']").each(function() {
+            var payMoney = $(this).val();
+            if (payMoney != "") {
+                totalMoney = totalMoney + parseFloat(payMoney);
+            }
+        });
+        $("#spanTotal").html(totalMoney);
+    }
+
+    function settingBtnEnblade() {
+        //设置按钮禁用状态
+        $("#btnTable_payGame input[type='button']").attr("disabled", "disabled");
+    }
+
+    function fnGetUserIdByUserName(that) {
+        var userName = $(that).val();
+
+        if (userName != "") {
+            $.ajax({
+                type: 'post',
+                url: '/Account/GetUserInfoByName',
+                dataType: 'json',
+                async: false,
+                data: {
+                    userName: userName
+                },
+                success: function (dataItem) {
+                    var userId = 0;
+                   // alert(dataItem.sucess);
+                    if (parseInt( dataItem.sucess) >0) {
+                        if ( parseInt( dataItem.UserId) > 0) {
+                            //alert(dataItem.UserId);
+                            //$("#hidUserId").val(dataItem.UserId);
+                            // $(that).find("span[data-val='userid']").html(dataItem.UserId);
+                            $(that).parent().parent().find("span[data-val='userid']").html(dataItem.UserId);
+
+                        } else {
+                            userId = addUser(userName);
+                            $(that).find("span[data-val='userid']").html(userId);
+                            $($(that).parent().parent().find("td")[3]).html(0); //账户当前积分
+                            $($(that).parent().parent().find("td")[4]).html(0); //月充值总额
+                            $($(that).parent().parent().find("td")[5]).html(0); //月统计输赢
+                            $($(that).parent().parent().find("td")[6]).html(0); //总充值额
+                        }
+                    } else {
+                        userId = addUser(userName);
+                        $(that).find("span[data-val='userid']").html(userId);
+                        $($(that).parent().parent().find("td")[3]).html(0); //账户当前积分
+                        $($(that).parent().parent().find("td")[4]).html(0); //月充值总额
+                        $($(that).parent().parent().find("td")[5]).html(0); //月统计输赢
+                        $($(that).parent().parent().find("td")[6]).html(0); //总充值额
+                    }
+                },
+                error: function(textThrown, errorText) {
+
+                }
+            });
+
+        }
+    }
+
+    function addUser(userName) {
+        $.ajax({
+            type: 'post',
+            url: '/Account/AddUser',
+            dataType: 'json',
+            data: {
+                userName: userName
+            },
+            success: function(dataItem) {
+                if (dataItem.sucess == 1) {
+                    if (dataItem.UserId > 0) {
+                        return dataItem.UserId;
+                    } else {
+                        alert("添加新用户出现错误，请联系管理员");
+                    }
+                } else {
+                    alert("添加新用户出现错误，请联系管理员");
+                }
+            },
+            error: function(textThrown, errorText) {
+
+            }
+        });
+
+    }
+
+    function fnOnLoadNextTime() {
+        //开户下一轮
+        if (confirm("确认开始新的一轮吗?")) {
+            location.href = "/game/AddTimes/";
+        }
+    }
+
+</script>
+</body>
+</html>
